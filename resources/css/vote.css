@@ -1,0 +1,241 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#eef4ff;
+}
+
+.container{
+    width:1200px;
+    margin:40px auto;
+}
+
+.title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:40px;
+    color:#1f2937;
+}
+
+/* ===== Card Layout ===== */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:#ffffff;
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.avatar{
+    width:80px;
+    height:80px;
+    margin:auto;
+    border-radius:50%;
+    background:#f3f4f6;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:40px;
+}
+
+.card h2{
+    margin-top:18px;
+    color:#222;
+}
+
+.score{
+    font-size:55px;
+    font-weight:bold;
+    margin:15px 0;
+    color:#2563eb;
+}
+
+.card p{
+    color:#777;
+}
+
+/* ===== Button ===== */
+
+.btn{
+    margin-top:20px;
+    border:none;
+    color:white;
+    padding:12px 28px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:17px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* ===== Progress ===== */
+
+.progress{
+    width:100%;
+    height:15px;
+    background:#ddd;
+    border-radius:20px;
+    margin-top:20px;
+    overflow:hidden;
+}
+
+.fill{
+    height:100%;
+}
+
+.percent{
+    margin-top:10px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* ===== Summary ===== */
+
+.summary{
+    margin-top:45px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.summary h2{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.total{
+    text-align:center;
+    font-size:65px;
+    color:#2563eb;
+    font-weight:bold;
+    margin-bottom:25px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#2563eb;
+    color:white;
+    padding:15px;
+}
+
+td{
+    padding:14px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+tr:nth-child(even){
+    background:#f7f7f7;
+}
+
+/* ===== Colors ===== */
+
+.blue{
+    background:#3b82f6;
+}
+.blue:hover{
+    background:#2563eb;
+}
+.blue-fill{
+    background:#3b82f6;
+}
+
+.green{
+    background:#22c55e;
+}
+.green:hover{
+    background:#16a34a;
+}
+.green-fill{
+    background:#22c55e;
+}
+
+.purple{
+    background:#9333ea;
+}
+.purple:hover{
+    background:#7e22ce;
+}
+.purple-fill{
+    background:#9333ea;
+}
+
+.orange{
+    background:#f59e0b;
+}
+.orange:hover{
+    background:#d97706;
+}
+.orange-fill{
+    background:#f59e0b;
+}
+
+.red{
+    background:#ef4444;
+}
+.red:hover{
+    background:#dc2626;
+}
+.red-fill{
+    background:#ef4444;
+}
+
+.teal{
+    background:#14b8a6;
+}
+.teal:hover{
+    background:#0f766e;
+}
+.teal-fill{
+    background:#14b8a6;
+}
+
+/* ===== Responsive ===== */
+
+@media(max-width:1000px){
+
+    .container{
+        width:95%;
+    }
+
+    .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:700px){
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .title{
+        font-size:32px;
+    }
+
+}
