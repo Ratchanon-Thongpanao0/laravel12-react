@@ -1,5 +1,5 @@
 // resources/js/Pages/ProductList.jsx
-import BootstrapLayout from "@/layouts/BootstrapLayout";
+import BootstrapLayout from "@/Layouts/BootstrapLayout";
 import React from "react";
 
 const ProductList = ({ products }) => {
