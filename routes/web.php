@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\Product;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -88,6 +89,26 @@ Route::get('/infinite-scroll', function () {
 })->name('infinite-scroll');
 
 
-Route::get('/vote', function () {
+Route::get('/quiz3', function () {
     return Inertia::render('Vote');
+});
+
+
+// routes/web.php
+// use App\Models\Product;
+Route::get('/product', function () {
+    $products = Product::all();
+    return Inertia::render('ProductList', compact('products') );
+})->name('product');
+
+
+// routes/web.php
+Route::get('/product-others', function () {
+    return Inertia::render('ProductOthers');
+})->name('product-others');
+
+
+
+Route::get('/quiz4', function () {
+    return Inertia::render('Quiz4');
 });
