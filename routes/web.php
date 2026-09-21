@@ -112,3 +112,41 @@ Route::get('/product-others', function () {
 Route::get('/quiz4', function () {
     return Inertia::render('Quiz4');
 });
+
+
+Route::get('/product-manager', function () {
+    $p = Product::all();
+    return Inertia::render('ProductManager', compact('p'));
+})->name('product-manager');
+
+Route::get('/product/create', function () {
+    return Inertia::render('ProductForm');
+})->name('product.create');
+
+Route::get('/product/{id}/edit', function ($id) {
+    $product = Product::findOrFail($id);
+    return Inertia::render('ProductForm', compact('product'));
+})->name('product.edit');
+
+
+use App\Http\Controllers\WeightController;
+Route::get('/weights', [WeightController::class, 'index'])->name('weights.index');
+Route::post('/weights', [WeightController::class, 'store'])->name('weights.store');
+Route::put('/weights/{weight}', [WeightController::class, 'update'])->name('weights.update');
+Route::delete('/weights/{weight}', [WeightController::class, 'destroy'])->name('weights.destroy');
+
+Route::get('/teacher', function () {
+    return Inertia::render('teacher/index');
+})->middleware('auth','role:admin,teacher',) ;
+
+
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/assets', function () {
+        return Inertia::render('Assets');
+    });
+});
+Route::middleware(['auth'])->group(function () {
+    Route::get('/assets-view', function () {
+        return Inertia::render('AssetView');
+    });
+}); 
