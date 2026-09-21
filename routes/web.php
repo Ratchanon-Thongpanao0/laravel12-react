@@ -140,7 +140,7 @@ Route::get('/teacher', function () {
 })->middleware('auth','role:admin,teacher',) ;
 
 
-Route::middleware(['auth', 'role:admin'])->group(function () {
+Route::middleware(['auth',])->group(function () {
     Route::get('/assets', function () {
         return Inertia::render('Assets');
     });
